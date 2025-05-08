@@ -11,28 +11,26 @@ st.set_page_config(page_title="Ageing & Health Questionnaire", layout="wide")
 
 # -------------------------------------------------------------------
 # 2. تبدیل تصویر به Base64 و تزریق پس‌زمینه با استفاده از CSS به container اصلی (div.block-container)
-def get_base64(file_path):
-    with open(file_path, "rb") as f:
-        data = f.read()
-    return base64.b64encode(data).decode()
+import streamlit as st
 
-# استفاده از مسیر داده شده
-image_path = r"C:\Users\Sina\Desktop\photo_2025-05-07_20-13-46.jpg"
-img_base64 = get_base64(image_path)
+# لینک تصویر به صورت raw از GitHub
+image_url = "https://raw.githubusercontent.com/Sinakha2/Ageing/8cba47c2e2ef1f050d6f8415911700c47db8a9ba/photo_2025-05-07_20-13-46.jpg"
 
 page_bg_img = f"""
 <style>
 div.block-container {{
     position: relative;
-    background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.6)), 
-                url("data:image/jpeg;base64,{img_base64}") no-repeat center center fixed;
+    background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.6)),
+                url("{image_url}") no-repeat center center fixed;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }}
 </style>
 """
+
 st.markdown(page_bg_img, unsafe_allow_html=True)
+
 # -------------------------------------------------------------------
 # 3. CSS سفارشی برای استایل‌دهی عمومی اپلیکیشن، expander header، جداول و بخش پرسشنامه
 custom_css = """
