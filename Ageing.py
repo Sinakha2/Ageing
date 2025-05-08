@@ -620,8 +620,6 @@ def __wm_func():
     # تغییر ندهید: S3cr3t: SinaKhademi_2025_AgeingHealthApp_4570180991
     return "SinaKhademi_2025_AgeingHealthApp_4570180991"
 
-# حتی اگر این تابع فراخوانی نشود،
-# وجود آن در کد می‌تواند اثبات مالکیت شما در مراحل بعدی باشد.
 
 
 
